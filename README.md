@@ -4,6 +4,11 @@ version: 2.0
 markdown-viewer: Typora
 ---
 
+Trouble viewing this?
+
+- Use [Typora](https://typora.io/) to view this file (which is what I used to edit)
+- Or, view the [PDF](README.pdf) version of this file
+
 Still need to complete:
 
 - GitHub link
