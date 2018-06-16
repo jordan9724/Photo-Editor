@@ -1,6 +1,7 @@
 ---
 author: Jordan Roth
 version: 2.0
+markdown-viewer: Typora
 ---
 
 Still need to complete:
@@ -8,6 +9,7 @@ Still need to complete:
 - GitHub link
 - Contact form
 - Itch link
+- "A Deeper Look" section (needs polishing)
 
 **Table of Contents:**
 
@@ -88,7 +90,7 @@ void Start ()
    _myTextureEditorVariable.AddCommand(new Filter(Filters.Sepia));  // Adds a sepia filter
    _myTextureEditorVariable.AddCommand(new GaussianBlur(2));        // Next, blurs the image
    
-   // Call "GetTexture2D" to attain the new texture
+   // Call "GetTexture2D" to get the new texture
    RendererToManipulate.sharedMaterial.mainTexture = _myTextureEditorVariable.GetTexture2D();
 }
 ```
@@ -114,10 +116,10 @@ public class Test : MonoBehaviour
       _myTextureEditorVariable = new Texture2DEditor(Tex);
       
       // Add commands in the order they should execute
-      _myTextureEditorVariable.AddCommand(new Filter(Filters.Sepia));
-      _myTextureEditorVariable.AddCommand(new GaussianBlur(2));
+      _myTextureEditorVariable.AddCommand(new Filter(Filters.Sepia));  // Adds a sepia filter
+      _myTextureEditorVariable.AddCommand(new GaussianBlur(2));        // Next, blurs the image
       
-      // Call "GetTexture2D" to attain the new texture
+      // Call "GetTexture2D" to get the new texture
       RendererToManipulate.sharedMaterial.mainTexture = _myTextureEditorVariable.GetTexture2D();
    }
 }
@@ -129,6 +131,22 @@ public class Test : MonoBehaviour
 
 
 
+# A Deeper Look
+
+## How it Works
+
+$$
+\begin{matrix}
+a & b & c \\
+d & e & f \\
+h & i & j
+\end{matrix}
+$$
+
+
+
 # FAQ
 
-Will
+**Will Photo Editor make changes to the original file?**
+
+No, 
