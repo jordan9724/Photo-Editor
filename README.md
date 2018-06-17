@@ -5,6 +5,8 @@ platform: Unity
 markdown-editor: Typora
 ---
 
+**!! THIS REPOSITORY IS STILL UNDER CONSTRUCTION !!**
+
 _Trouble viewing this? View on [GitHub](https://github.com/jordan9724/Photo-Editor/blob/master/README.md) or try the [PDF](README.pdf) version of this file._
 
 **Table of Contents:**
