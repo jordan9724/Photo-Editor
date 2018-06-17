@@ -192,7 +192,7 @@ Using texture:
 
 ![](Pictures/universe.jpg)
 
-> Following the [Quick Start](#Quick Start) guide, our file looks kind of like this:
+> Following the [Quick Start](#quick-start) guide, our file looks kind of like this:
 
 ```C#
 using Picture_Editor_v2.Scripts;             // Contains Texture2DEditor class
@@ -231,7 +231,7 @@ Float added to each RGB value after the convolution is applied
 
 ### Convolutions
 
-> The following examples replace `myEditor.AddCommand(<myCommand>);` in the [Scenario](#Scenario) above
+> The following examples replace `myEditor.AddCommand(<myCommand>);` in the [Scenario](#scenario) above
 
 #### Edge Detection
 
@@ -285,7 +285,7 @@ myEditor.AddCommand(new Convolution(Convolutions.Emboss45, 0.5f));
 
 #### Emboss Depth
 
-Similar to [Emboss 45](#Emboss 45), but blends the final image more. _Notice that bias is used._
+Similar to [Emboss 45](#emboss-45), but blends the final image more. _Notice that bias is used._
 
 ```C#
 myEditor.AddCommand(new Convolution(Convolutions.EmbossDepth, 0.5f));
@@ -325,7 +325,7 @@ myEditor.AddCommand(new Convolution(Convolutions.SharpenIntense));
 
 #### Sharpen Medium
 
-A happy medium between [Sharpen](#Sharpen) and [Sharpen Intense](#Sharpen Intense)
+A happy medium between [Sharpen](#sharpen) and [Sharpen Intense](#sharpen-intense)
 
 ```C#
 myEditor.AddCommand(new Convolution(Convolutions.SharpenMedium));
@@ -337,7 +337,7 @@ myEditor.AddCommand(new Convolution(Convolutions.SharpenMedium));
 
 Used to apply a circular crop around the texture
 
-> The following replaces `myEditor.AddCommand(<myCommand>);` in the [Scenario](#Scenario) above
+> The following replaces `myEditor.AddCommand(<myCommand>);` in the [Scenario](#scenario) above
 
 ```c#
 myEditor.AddCommand(new CropCircle());
