@@ -152,7 +152,7 @@ myEditor.AddCommand(new CircleCrop());
 
 Can be visually represented as:
 
-![](.readme_data\command_sequence.png)
+![](.readme_data/command_sequence.png)
 
 ## Understanding `Texture2DEditor.GetTexture2D()`
 
