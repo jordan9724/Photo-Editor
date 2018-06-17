@@ -25,8 +25,7 @@ namespace Picture_Editor_v2.Scripts
 		public Texture2DEditor(Texture2D tex)
 		{
 			_texture2DColor = new Texture2DColor(tex);
-			_command = new Base();
-			_command.SetPreviousGetPixel(_texture2DColor.GetPixel);
+			_command = _texture2DColor;
 		}
 
 		/// <summary>

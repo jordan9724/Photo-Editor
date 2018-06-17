@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using Picture_Editor_v2.Scripts.Commands;
+using UnityEngine;
 
 namespace Picture_Editor_v2.Scripts
 {
 	/// <summary>
 	/// Contains the information needed to edit a texture
 	/// </summary>
-	public class Texture2DColor
+	public class Texture2DColor : EditCommand
 	{
 		/// <summary>
 		/// All the colors in the texture
@@ -36,8 +37,8 @@ namespace Picture_Editor_v2.Scripts
 		/// Gets the unedited color of a pixel
 		/// </summary>
 		/// <param name="pos">Position of the color</param>
-		/// <returns>Color at the location</returns>
-		public Color GetPixel(int pos)
+		/// <returns>Color at the position</returns>
+		public override Color GetPixel(int pos)
 		{
 			return _texColors[pos];
 		}

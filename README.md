@@ -26,7 +26,8 @@ Highlights:
 
 - As of writing this, 5 stars on the Asset Store
 - Extensive documentation
-- Super easy way to edit photos
+- Greatly commented
+- Super easy way to programmatically edit photos
 - FREE!
 
 Why I made this:
@@ -136,22 +137,58 @@ public class Test : MonoBehaviour
 
 
 
-# A Deeper Look
+# How Commands Work
 
-## How it Works
+## Understanding of `Texture2DEditor.AddCommand()`
 
-$$
-\begin{matrix}
-a & b & c \\
-d & e & f \\
-h & i & j
-\end{matrix}
-$$
+Given scenario:
 
+```C#
+Texture2DEditor myEditor = new Texture2DEditor(myTexture);
+myEditor.AddCommand(new Negative());
+myEditor.AddCommand(new Multiplier(2));
+myEditor.AddCommand(new CircleCrop());
+```
 
+Can be visually represented as:
+
+![](.readme_data\command_sequence.png)
+
+## Understanding `Texture2DEditor.GetTexture2D()`
+
+### Algorithm
+
+1. Produces the new image pixel by pixel
+
+2. At each pixel, it asks the previous command to give it the new pixel via `GetPixel()`
+
+   1. Per our example, the new image invokes circle crop's `GetPixel()` at the current pixel
+   2. Circle crop either returns the color `black` or it invokes multiplier's `GetPixel()`
+   3. Then multiplier invokes negative's `GetPixel()` **before** the multiplier command is applied
+   4. Negative will then get a copy of the original image's color at the current pixel
+
+3. Next, once it has the new image, it will trim the image by default
+
+   > Trimming removes any columns or rows located on the side of the image that only include clear pixels. _Clear pixels are usually a result from cropping the image._
+
+### Visualization
+
+Continuing from the previous scenario, calling `myEditor.GetTexture2D()` can be visualized as:
+
+![](.readme_data/get_texture.png)
+
+_Note: The image still has 5 pixels to process._
+
+_Note: This image will not get trimmed._
+
+### Trimming
+
+Assuming the `black` pixels represent `clear` pixels:
+
+![](.readme_data/trim.png)
 
 # FAQ
 
 **Will Photo Editor make changes to the original file?**
 
-No, 
+No, Unity only allows textures to have their colors copied.
