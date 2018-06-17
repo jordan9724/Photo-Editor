@@ -139,7 +139,7 @@ public class Test : MonoBehaviour
 
 # How Commands Work
 
-## Understanding of `Texture2DEditor.AddCommand()`
+## Understanding `Texture2DEditor.AddCommand()`
 
 Given scenario:
 
@@ -175,6 +175,8 @@ Can be visually represented as:
 
 Continuing from the previous scenario, calling `myEditor.GetTexture2D()` can be visualized as:
 
+> :grey_exclamation: Notice that the placement of circle crop keeps the negative and multiplier command from performing extra computation, so it's a little faster
+
 ![](.readme_data/get_texture.png)
 
 _Note: The image still has 5 pixels to process._
@@ -191,4 +193,4 @@ Assuming the `black` pixels represent `clear` pixels:
 
 **Will Photo Editor make changes to the original file?**
 
-No, Unity only allows textures to have their colors copied.
+No, Unity only allows the copying of texture's colors.
