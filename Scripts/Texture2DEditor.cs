@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Picture_Editor_v2.Scripts.Commands;
 using UnityEngine;
 
@@ -44,8 +45,9 @@ namespace Picture_Editor_v2.Scripts
 		/// Gets the edited version of the original texture
 		/// </summary>
 		/// <param name="trim">True - Trims clear pixels off the sides</param>
+		/// <param name="fileName">If not null, writes a PNG file to the game data folder. Exclude '.png' in the file name</param>
 		/// <returns></returns>
-		public Texture2D GetTexture2D(bool trim=true)
+		public Texture2D GetTexture2D(bool trim=true, string fileName=null)
 		{
 			Color[] newTexColor = new Color[_texture2DColor.Width * _texture2DColor.Height];
 			for (int y = 0; y < _texture2DColor.Height; y++)
@@ -61,6 +63,8 @@ namespace Picture_Editor_v2.Scripts
 			Texture2D newTex = new Texture2D(width, height);
 			newTex.SetPixels(newTexColor);
 			newTex.Apply();
+			if (fileName != null)
+				SaveFile(fileName, newTex);
 			return newTex;
 		}
 
@@ -141,6 +145,19 @@ namespace Picture_Editor_v2.Scripts
 			if (float.IsPositiveInfinity(bounds.x)) throw new ArgumentException("There is nothing left of the image to trim");
 
 			return bounds;
+		}
+
+		/// <summary>
+		/// Writes a PNG file to the game data folder
+		/// </summary>
+		/// <param name="fileName">Name of the file (exclude the .png)</param>
+		/// <param name="tex">Texture to save</param>
+		public void SaveFile(string fileName, Texture2D tex)
+		{
+			// Encode texture into PNG
+			byte[] bytes = tex.EncodeToPNG();
+
+			File.WriteAllBytes(Application.dataPath + "/" + fileName +".png", bytes);
 		}
 
 	}

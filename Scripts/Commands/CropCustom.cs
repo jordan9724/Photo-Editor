@@ -5,7 +5,7 @@ namespace Picture_Editor_v2.Scripts.Commands
 	/// <summary>
 	/// Crops an image based off of another black and white image
 	/// </summary>
-	public class CustomCrop : Crop
+	public class CropCustom : Crop
 	{
 
 		/// <summary>
@@ -33,7 +33,7 @@ namespace Picture_Editor_v2.Scripts.Commands
 		/// Takes the black and white image and extracts needed information
 		/// </summary>
 		/// <param name="tex">Black and white image</param>
-		public CustomCrop(Texture2D tex)
+		public CropCustom(Texture2D tex)
 		{
 			_customColors = tex.GetPixels();
 			_width = tex.width;

@@ -8,36 +8,6 @@
 	{
 
 		/// <summary>
-		/// Adds more contrast to the image
-		/// </summary>
-		public static readonly float[,] Sharpen =
-		{
-			{ -1, -1, -1},
-			{ -1,  9, -1},
-			{ -1, -1, -1}
-		};
-
-		/// <summary>
-		/// Greatly contrasts the image
-		/// </summary>
-		public static readonly float[,] SharpenIntense =
-		{
-			{ 1,  1, 1},
-			{ 1, -7, 1},
-			{ 1,  1, 1}
-		};
-
-		/// <summary>
-		/// Slightly contrasts the image
-		/// </summary>
-		public static readonly float[,] SharpenMedium =
-		{
-			{  0, -1,  0},
-			{ -1,  5, -1},
-			{  0, -1,  0}
-		};
-
-		/// <summary>
 		/// Keeps the edges in the image
 		/// </summary>
 		public static readonly float[,] EdgeDetection =
@@ -55,6 +25,16 @@
 			{ -5, 0, 0},
 			{  0, 0, 0},
 			{  0, 0, 5}
+		};
+
+		/// <summary>
+		/// Makes the edges more apparent
+		/// </summary>
+		public static readonly float[,] EdgeEnhancement =
+		{
+			{ -1, 0, 0},
+			{  0, 2, 0},
+			{  0, 0, 0}
 		};
 
 		/// <summary>
@@ -99,13 +79,33 @@
 		};
 
 		/// <summary>
-		/// Makes the edges more apparent
+		/// Adds more contrast to the image
 		/// </summary>
-		public static readonly float[,] EdgeEnhancement =
+		public static readonly float[,] Sharpen =
 		{
-			{ -1, 0, 0},
-			{  0, 2, 0},
-			{  0, 0, 0}
+			{ -1, -1, -1},
+			{ -1,  9, -1},
+			{ -1, -1, -1}
+		};
+
+		/// <summary>
+		/// Greatly contrasts the image
+		/// </summary>
+		public static readonly float[,] SharpenIntense =
+		{
+			{ 1,  1, 1},
+			{ 1, -7, 1},
+			{ 1,  1, 1}
+		};
+
+		/// <summary>
+		/// Slightly contrasts the image
+		/// </summary>
+		public static readonly float[,] SharpenMedium =
+		{
+			{  0, -1,  0},
+			{ -1,  5, -1},
+			{  0, -1,  0}
 		};
 
 	}

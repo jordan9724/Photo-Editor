@@ -5,7 +5,7 @@ namespace Picture_Editor_v2.Scripts.Commands
 	/// <summary>
 	/// Carves an ellipse out of the image, keeping the original width and height
 	/// </summary>
-	public class EllipseCrop : Crop
+	public class CropEllipse : Crop
 	{
 
 		/// <summary>

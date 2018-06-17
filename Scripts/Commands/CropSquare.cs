@@ -5,7 +5,7 @@ namespace Picture_Editor_v2.Scripts.Commands
 	/// <summary>
 	/// Carves a square starting from the center of the image
 	/// </summary>
-	public class SquareCrop : Crop
+	public class CropSquare : Crop
 	{
 		/// <summary>
 		/// Left side of the square

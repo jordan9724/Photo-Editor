@@ -28,6 +28,7 @@ namespace Picture_Editor_v2.Scripts.Commands
 		/// Initializes the convolution
 		/// </summary>
 		/// <param name="convolution">Filter used to adjust a pixel based on the pixels around it</param>
+		/// <param name="bias">Added to each RGB value after convolution is calculated</param>
 		/// <exception cref="ArgumentException">Convolution must be a 3x3 array</exception>
 		public Convolution(float[,] convolution, float bias=0)
 		{

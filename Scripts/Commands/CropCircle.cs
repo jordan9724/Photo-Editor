@@ -6,7 +6,7 @@ namespace Picture_Editor_v2.Scripts.Commands
 	/// <summary>
 	/// Carves a perfect circle from the center to the closest edge
 	/// </summary>
-	public class CircleCrop : Crop
+	public class CropCircle : Crop
 	{
 		/// <summary>
 		/// Smallest distance from the center to the edge, squared
